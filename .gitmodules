@@ -1,0 +1,6 @@
+[submodule "pages"]
+	path = pages
+	url = git@github.com:c3wien/c3w.at-pages.git
+[submodule "themes/c3w-theme"]
+	path = themes/c3w-theme
+	url = git@github.com:c3wien/c3w-theme
