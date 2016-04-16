@@ -2,4 +2,4 @@
 /output/
 *.pyc
 .doit.db
-
+.DS_Store
