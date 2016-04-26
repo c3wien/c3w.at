@@ -40,7 +40,7 @@ NAVIGATION_LINKS = {
 	),
 }
 
-CONTENT_FOOTER = 'Die <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Inhalte</span> stehen unter einer <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> &#8208; <a href="/impressum/">Impressum</a>'
+CONTENT_FOOTER = 'Die <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Inhalte</span> stehen unter <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> &#8208; <a href="/impressum/">Impressum</a>'
 TIMEZONE = "Europe/Vienna"
 
 COMPILERS = {
