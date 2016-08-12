@@ -25,10 +25,10 @@ TRANSLATIONS = {
 }
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-#		('/posts/', 'Blog'),
+		('/aktuelles/', 'Aktuelles'),
 		('/mitmachen/', 'Mitmachen'),
 		('/events/', 'Events'),
-		('/aktuelles/', 'Projekte & Aktuelles'),
+		('/projekte/', 'Projekte'),
 		('/publikationen/', 'Publikationen'),
 		('/presse/', 'Pressespiegel'),
 		('/links/', 'Links'),
@@ -53,9 +53,12 @@ COMPILERS = {
 # Warning: this option will change its default value to False in v8!
 WRITE_TAG_CLOUD = True
 
-IMAGE_FOLDERS = {'images': 'images'}
+IMAGE_FOLDERS = {'content/images': 'images'}
 # IMAGE_THUMBNAIL_SIZE = 400
 
+FILES_FOLDERS = {'content/files': ''}
+
+INDEX_TEASERS = True
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
 INDEX_READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 # 'Read more...' for the feeds, if FEED_TEASERS is True (translatable)
@@ -78,16 +81,19 @@ PRETTY_URLS = True
 MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 UNSLUGIFY_TITLES = True
 ENABLE_AUTHOR_PAGES = False
-INDEX_PATH = "blog"
+COMMENT_SYSTEM = False
+INDEX_PATH = "aktuelles"
+ARCHIVE_PATH = "posts"
+
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
-    ("posts/*.html", "posts", "post.tmpl"),
+    ("content/posts/*.rst", "posts", "post.tmpl"),
+    ("content/posts/*.md", "posts", "post.tmpl"),
+    ("content/posts/*.txt", "posts", "post.tmpl"),
+    ("content/posts/*.html", "posts", "post.tmpl"),
 )
 PAGES = (
-    ("pages/*.rst", "", "story.tmpl"),
-    ("pages/*.md", "", "story.tmpl"),
-    ("pages/*.txt", "", "story.tmpl"),
-    ("pages/*.html", "", "story.tmpl"),
+    ("content/pages/*.rst", "", "story.tmpl"),
+    ("content/pages/*.md", "", "story.tmpl"),
+    ("content/pages/*.txt", "", "story.tmpl"),
+    ("content/pages/*.html", "", "story.tmpl"),
 )

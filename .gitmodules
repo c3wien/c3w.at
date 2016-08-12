@@ -3,6 +3,6 @@
 	url = https://github.com/c3wien/c3w-theme.git
 	branch = master
 [submodule "pages"]
-	path = pages
+	path = content
 	url = https://github.com/c3wien/c3w.at-pages.git
 	branch = master
