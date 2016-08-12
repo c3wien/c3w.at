@@ -56,7 +56,7 @@ WRITE_TAG_CLOUD = True
 IMAGE_FOLDERS = {'content/images': 'images'}
 # IMAGE_THUMBNAIL_SIZE = 400
 
-FILES_FOLDERS = {'content/files': ''}
+FILES_FOLDERS = {'content/files': 'files'}
 
 INDEX_TEASERS = True
 # 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)
