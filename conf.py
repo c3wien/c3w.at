@@ -3,14 +3,20 @@
 from __future__ import unicode_literals
 import time
 
-BLOG_AUTHOR = "Chaos Computer Club Wien"  # (translatable)
-BLOG_TITLE = "CCC Wien"  # (translatable)
+BLOG_AUTHOR = "Chaos Computer Club Wien"
+BLOG_TITLE = "CCC Wien"
 SITE_URL = "https://c3w.at/"
 BLOG_EMAIL = "root@localhost"
 BLOG_DESCRIPTION = "Chaos Computer Club Wien"  # (translatable)
 THEME = 'c3w-theme'
 USE_BUNDLES = False
 
+TWITTER_CARD = {
+	'use_twitter_cards': True,
+	'card': 'summary_large_image',
+	'site': '@c3wien',
+	'creator': '@c3wien',
+}
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
@@ -78,6 +84,7 @@ CONTENT_FOOTER_FORMATS = {
 }
 STRIP_INDEXES = True
 PRETTY_URLS = True
+COPY_SOURCES = False
 MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
 UNSLUGIFY_TITLES = True
 ENABLE_AUTHOR_PAGES = False

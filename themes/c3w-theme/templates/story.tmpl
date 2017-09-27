@@ -1,0 +1,26 @@
+## -*- coding: utf-8 -*-
+<%namespace name="helper" file="post_helper.tmpl"/>
+<%namespace name="pheader" file="post_header.tmpl"/>
+<%namespace name="comments" file="comments_helper.tmpl"/>
+<%inherit file="post.tmpl"/>
+
+<!-- single page template -->
+<%block name="content">
+  <article class="page hentry type-${post.meta('type')} wrapper container page-${post.meta('slug')}" id="content">
+    <div class="inner clearfix">
+      ${pheader.html_title()}
+      ${pheader.html_translations(post)}
+      <div class="content clearfix">
+        ${post.text()}
+      </div>
+      %if site_has_comments and enable_comments and not post.meta('nocomments'):
+      <section class="comments">
+        <h2>${messages("Comments")}</h2>
+        ${comments.comment_form(post.permalink(absolute=True), post.title(), post.base_path)}
+      </section>
+      %endif
+      ${helper.mathjax_script(post)}
+    </div>
+  </article>
+</%block>
+

@@ -3,10 +3,9 @@ This folder contains the nikola configuration and references for content and the
 Installation and documentation of nikola can be found at https://getnikola.com/
 
 
-To initialize the content and theme git submodules use::
+check out the content git repo::
 
-   git submodule init
-   git submodule update
+   git clone git@github.com:c3wien/c3w.at-pages.git content
 
 To build the site::
 
@@ -18,8 +17,4 @@ To see it::
 
 or to automatically rebuild the site on local changes use::
 
-    nikola auto
-
-To check all available commands::
-
-    nikola help
+    nikola auto -b

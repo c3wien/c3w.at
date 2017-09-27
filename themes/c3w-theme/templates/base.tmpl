@@ -1,0 +1,43 @@
+## -*- coding: utf-8 -*-
+<%namespace name="base" file="base_helper.tmpl" import="*"/>
+<%namespace name="header" file="base_header.tmpl" import="*"/>
+<%namespace name="footer" file="base_footer.tmpl" import="*"/>
+<%namespace name="annotations" file="annotation_helper.tmpl"/>
+${set_locale(lang)}
+${base.html_headstart()}
+<%block name="extra_head">
+### Leave this block alone.
+</%block>
+${template_hooks['extra_head']()}
+</head>
+<body>
+  <!-- skin navigation to use with tabulator (accessibility) -->
+  <nav id="skip">
+    <ul>
+      <li><a href="#menu-main">Jump to Navigation</a></li>
+      <li><a href="#main">Jump to Content</a></li>
+    </ul>
+  </nav>
+  <!-- site-header -->
+  <header class="container site-header">
+    <div class="inner clearfix">
+      ${header.html_site_title()}
+      <!--<h1 class="site-title">...</h1>
+      <p class="subheadline">... coming soon</p>-->
+      ${header.html_navigation_links()}
+    </div>
+  </header>
+  <!-- site-main -->
+  <main id="main" class="container main">
+    <div class="inner wrapper clearfix">
+	    <%block name="content"></%block>
+    </div>
+  </main>
+  <!-- site-footer -->
+  ${footer.html_footer()}
+  ${body_end}
+  ${template_hooks['body_end']()}
+  ${base.late_load_js()}
+  <%block name="extra_js"></%block>
+</body>
+</html>
