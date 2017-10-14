@@ -35,6 +35,7 @@ NAVIGATION_LINKS = {
 		('/mitmachen/', 'Mitmachen'),
 		('/events/', 'Events'),
 		('/projekte/', 'Projekte'),
+                ('/services/', 'Services'),
 		('/publikationen/', 'Publikationen'),
 		('/presse/', 'Pressespiegel'),
 		('/links/', 'Links'),
