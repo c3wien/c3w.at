@@ -5,7 +5,7 @@ import time
 
 BLOG_AUTHOR = "Chaos Computer Club Wien"
 BLOG_TITLE = "CCC Wien"
-SITE_URL = "https://c3w.at/"
+SITE_URL = "/"
 BLOG_EMAIL = "root@localhost"
 BLOG_DESCRIPTION = "Chaos Computer Club Wien"  # (translatable)
 THEME = 'c3w-theme'
@@ -35,6 +35,7 @@ NAVIGATION_LINKS = {
 		('/mitmachen/', 'Mitmachen'),
 		('/events/', 'Events'),
 		('/projekte/', 'Projekte'),
+                ('/services/', 'Services'),
 		('/publikationen/', 'Publikationen'),
 		('/presse/', 'Pressespiegel'),
 		('/links/', 'Links'),
