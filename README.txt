@@ -18,3 +18,4 @@ To see it::
 or to automatically rebuild the site on local changes use::
 
     nikola auto -b
+
