@@ -8,7 +8,7 @@ BLOG_TITLE = "CCC Wien"
 SITE_URL = "/"
 BLOG_EMAIL = "root@localhost"
 BLOG_DESCRIPTION = "Chaos Computer Club Wien"  # (translatable)
-THEME = 'c3w-theme'
+THEME = 'c3w-eh18'
 USE_BUNDLES = False
 
 TWITTER_CARD = {
