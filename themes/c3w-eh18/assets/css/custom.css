@@ -137,3 +137,15 @@ hr {
 	margin-bottom: 1.7rem;
 	border-top-width: 4px;
 }
+
+/* make navbar more visible fonts are blocked */
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.6) !important;
+    border-radius: 5px;
+}
+
+#footer {
+	padding-top: 0;
+	padding-bottom: 0.7rem;
+	border-top: 2px solid #4E5D6C;
+}
