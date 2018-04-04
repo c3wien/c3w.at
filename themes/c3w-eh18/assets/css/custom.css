@@ -143,6 +143,9 @@ hr {
     border-color: rgba(255,255,255,0.6) !important;
     border-radius: 5px;
 }
+.navbar-toggler-icon {
+        background-image: url("../images/navbar.svg") !important;
+}
 
 #footer {
 	padding-top: 0;
