@@ -7,6 +7,12 @@ body{
 	 body{
 		padding-top: 65px !important;
 	 }
+	 article {
+		 padding: 1rem !important;
+	}
+	article .entry-content, article .entry-summary {
+	margin-left: 0 !important;
+	}
 }
 
 @media only screen and (min-width: 500px) {
