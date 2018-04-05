@@ -11,7 +11,39 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/Lato/Lato-Light.eot);
+  src: local('Lato Light'), local('Lato-Light'),
+    url(../fonts/Lato/Lato-Light.woff2) format('woff2'),
+    url(../fonts/Lato/Lato-Light.woff) format('woff'),
+    url(../fonts/Lato/Lato-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato/Lato-Regular.eot);
+  src: local('Lato Regular'), local('Lato-Regular'),
+    url(../fonts/Lato/Lato-Regular.eot) format('embedded-opentype'),
+    url(../fonts/Lato/Lato-Regular.woff2) format('woff2'),
+    url(../fonts/Lato/Lato-Regular.woff) format('woff'),
+    url(../fonts/Lato/Lato-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato/Lato-Bold.eot);
+  src: local('Lato Bold'), local('Lato-Bold'),
+    url(../fonts/Lato/Lato/Lato-Bold.eot) format('embedded-opentype'),
+    url(../fonts/Lato/Lato-Bold.woff2) format('woff2'),
+    url(../fonts/Lato/Lato-Bold.woff) format('woff'),
+    url(../fonts/Lato/Lato-Bold.ttf) format('truetype');
+}
+
 :root {
   --blue: #DF691A;
   --indigo: #6610f2;
