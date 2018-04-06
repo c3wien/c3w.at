@@ -8,8 +8,9 @@ BLOG_TITLE = "CCC Wien"
 SITE_URL = "/"
 BLOG_EMAIL = "root@localhost"
 BLOG_DESCRIPTION = "Chaos Computer Club Wien"  # (translatable)
-THEME = 'c3w-theme'
-USE_BUNDLES = False
+THEME = 'c3w-eh18'
+USE_BUNDLES = True
+USE_CDN = False
 
 TWITTER_CARD = {
 	'use_twitter_cards': True,
@@ -87,7 +88,7 @@ STRIP_INDEXES = True
 PRETTY_URLS = True
 COPY_SOURCES = False
 MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'extra']
-UNSLUGIFY_TITLES = True
+FILE_METADATA_UNSLUGIFY_TITLES = True
 ENABLE_AUTHOR_PAGES = False
 COMMENT_SYSTEM = False
 INDEX_PATH = "aktuelles"
