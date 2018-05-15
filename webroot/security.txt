@@ -1,0 +1,10 @@
+# In scope targets
+In-scope: *.c3w.at
+
+# Thanks for helping to improve our security by responsibly reporting problems 
+# you have found! Much appreciated!
+
+# Our security address handled by the IT-Crowd team of volonteers.
+Contact: security@c3w.at
+
+Rate-limit: 100

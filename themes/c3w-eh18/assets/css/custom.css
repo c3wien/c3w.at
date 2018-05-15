@@ -144,13 +144,17 @@ hr {
 	border-top-width: 4px;
 }
 
-/* make navbar more visible fonts are blocked */
+/* navbar */
 .navbar-toggler {
     border-color: rgba(255,255,255,0.6) !important;
     border-radius: 5px;
 }
 .navbar-toggler-icon {
         background-image: url("../images/navbar.svg") !important;
+}
+
+.navbar-dark .navbar-brand, .navbar-dark .navbar-nav .nav-link {
+    color: #2B3E50 !important;
 }
 
 #footer {
