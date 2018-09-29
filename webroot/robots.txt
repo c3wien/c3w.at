@@ -1,4 +1,3 @@
-Sitemap: /sitemapindex.xml
+Sitemap: https://c3w.at/sitemapindex.xml
 
 User-Agent: *
-Disalllow:
