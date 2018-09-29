@@ -6,7 +6,7 @@ import time
 BLOG_AUTHOR = "Chaos Computer Club Wien"
 BLOG_TITLE = "CCC Wien"
 SITE_URL = "/"
-BLOG_EMAIL = "root@localhost"
+BLOG_EMAIL = "buero@c3w.at"
 BLOG_DESCRIPTION = "Chaos Computer Club Wien"  # (translatable)
 THEME = 'c3w-eh18'
 USE_BUNDLES = True
