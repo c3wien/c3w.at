@@ -49,7 +49,7 @@ NAVIGATION_LINKS = {
 	),
 }
 
-CONTENT_FOOTER = 'Die <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Inhalte</span> stehen unter <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> &#8208; <a href="/impressum/">Impressum</a> - <a href="/datenschutz/">Datenschutz</a>'
+CONTENT_FOOTER = 'Die <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Inhalte</span> stehen unter <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> &#8208; <a href="/impressum/">Impressum</a> - <a href="/datenschutz/">Datenschutz</a> - Mastodon: <a rel="me" href="https://chaos.social/@C3Wien">@C3Wien@chaos.social</a>'
 TIMEZONE = "Europe/Vienna"
 
 COMPILERS = {
