@@ -65,6 +65,10 @@ class CalendarPlugin(ShortcodePlugin):
                     eventdict['dtstart'] = element.get('dtstart').dt
                 if element.get('dtend') is not None:
                     eventdict['dtend'] = element.get('dtend').dt
+                    event_length = element.get('dtend').dt - element.get('dtstart').dt
+                if element.get('duration') is not None:
+                    event_length = element.decoded('duration')
+                    eventdict['dtend'] = element.get('dtstart').dt + event_length
                 if element.get('location') is not None:
                     eventdict['location'] = element.get('location')
                 events.append(eventdict)
@@ -72,7 +76,6 @@ class CalendarPlugin(ShortcodePlugin):
                 if 'RRULE' in element and recurring_month:
                     for date in self._calculate_recurring(element, recurring_month):
                         subevent = dict(eventdict)
-                        event_length = element.get('dtend').dt-element.get('dtstart').dt
                         subevent['dtstart'] = date
                         subevent['dtend'] = date + event_length
                         events.append(subevent)
