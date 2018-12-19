@@ -1,0 +1,41 @@
+<%page args="events"/>
+<%
+    from datetime import datetime, date, time
+    from dateutil.relativedelta import relativedelta
+
+    events = sorted(events, key=lambda k: datetime.combine(k['dtstart'], time.min))
+
+    events_list = []
+
+    for event in events:
+        if  datetime.combine(event['dtend'], time.min) < datetime.now():
+            continue;
+        if  datetime.combine(event['dtstart'], time.min) > datetime.now()+relativedelta(months=+3):
+            continue;
+
+        if type(event['dtstart']) is date and event['dtstart'] < event['dtend']:
+            event['date'] = '%s bis %s' % (event['dtstart'], event['dtend'])
+        else:
+            event['date'] = event['dtstart'].strftime('%Y-%m-%d %H:%M')
+
+        
+        events_list.append(event)
+
+%>
+<%! from time import strftime as time %>
+<div class="section" id="kommende-events">
+    <ul class="simple">
+    % for event in events_list:
+        <li><i>${event.get('date', '')}</i>:
+        % if event.get('url'):
+            <b><a href="${event['url']}">${event.get('summary', '')}</a></b>
+        % else:
+            <b>${event.get('summary', '')}</b>
+        % endif
+        <i>${event.get('description', '')}</i>
+        % if event.get('location'):
+            <small>(${event.get('location', '')})</small>
+        % endif
+    % endfor
+    </ul>
+</div>
