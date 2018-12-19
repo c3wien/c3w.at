@@ -1,6 +1,7 @@
 <%page args="events"/>
 <%
     from datetime import datetime, date, time
+    from dateutil.relativedelta import relativedelta
     events = sorted(events, key=lambda k: datetime.combine(k['dtstart'], time.min))
 
     month_list = []
@@ -8,8 +9,12 @@
     past_events = []
 
     for event in events:
-        if type(event['dtstart']) is date and event['dtstart'] < event['dtend']:
-            event['date'] = '%s bis %s' % (event['dtstart'], event['dtend'])
+        if type(event['dtstart']) is date:
+            event['dtend'] = event['dtend']-relativedelta(days=1) # ical end date is the day after
+            if event['dtstart'] < event['dtend']:
+                event['date'] = '%s bis %s' % (event['dtstart'], event['dtend'])
+            else:
+                event['date'] = '%s' % (event['dtstart'], )
         else:
             event['date'] = event['dtstart'].strftime('%Y-%m-%d %H:%M')
 
