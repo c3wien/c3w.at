@@ -13,8 +13,12 @@
         if  datetime.combine(event['dtstart'], time.min) > datetime.now()+relativedelta(months=+3):
             continue;
 
-        if type(event['dtstart']) is date and event['dtstart'] < event['dtend']:
-            event['date'] = '%s bis %s' % (event['dtstart'], event['dtend'])
+        if type(event['dtstart']) is date:
+            event['dtend'] = event['dtend']-relativedelta(days=1) # ical end date is the day after
+            if event['dtstart'] < event['dtend']:
+                event['date'] = '%s bis %s' % (event['dtstart'], event['dtend'])
+            else:
+                event['date'] = '%s' % (event['dtstart'], )
         else:
             event['date'] = event['dtstart'].strftime('%Y-%m-%d %H:%M')
 
