@@ -8,7 +8,7 @@
     events_list = []
 
     for event in events:
-        if  datetime.combine(event['dtend'], time.min) < datetime.now():
+        if  datetime.combine(event['dtend'], time.min).date() < datetime.now().date():
             continue;
         if  datetime.combine(event['dtstart'], time.min) > datetime.now()+relativedelta(months=+3):
             continue;

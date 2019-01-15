@@ -18,7 +18,7 @@
         else:
             event['date'] = event['dtstart'].strftime('%Y-%m-%d %H:%M')
 
-        if  datetime.combine(event['dtend'], time.min) < datetime.now():
+        if  datetime.combine(event['dtend'], time.min).date() < datetime.now().date():
             past_events.append(event)
         else:
             if current_month != event['dtstart'].month:
