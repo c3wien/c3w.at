@@ -1,0 +1,73 @@
+<%page args="events"/>
+<%
+    from datetime import datetime, date, time
+    from dateutil.relativedelta import relativedelta
+    events = sorted(events, key=lambda k: datetime.combine(k['dtstart'], time.min))
+
+    month_list = []
+    current_month=None
+    past_events = []
+
+    for event in events:
+        if type(event['dtstart']) is date:
+            event['dtend'] = event['dtend']-relativedelta(days=1) # ical end date is the day after
+            if event['dtstart'] < event['dtend']:
+                event['date'] = '%s bis %s' % (event['dtstart'], event['dtend'])
+            else:
+                event['date'] = '%s' % (event['dtstart'], )
+        else:
+            event['date'] = event['dtstart'].strftime('%Y-%m-%d %H:%M')
+
+        if  datetime.combine(event['dtend'], time.min).date() < datetime.now().date():
+            past_events.append(event)
+        else:
+            if current_month != event['dtstart'].month:
+                current_month = event['dtstart'].month
+                month_list.append([])
+            event['head'] = event['dtstart'].strftime('%B %Y	')
+            month_list[-1].append(event)
+
+    past_events = past_events[::-1]
+%>
+<%! from time import strftime as time %>
+<div class="section" id="kommende-events">
+    <h2>kommende Events</h2>
+    % for month in month_list:
+    <div class="section">
+        <h3>${month[0]['head'] }</h3>
+        <ul class="simple">
+            % for event in month:
+                <li><i>${event.get('date', '')}</i>:
+                % if event.get('url'):
+                    <b><a href="${event['url']}">${event.get('summary', '')}</a></b>
+                % else:
+                    <b>${event.get('summary', '')}</b>
+                % endif
+                <i>${event.get('description', '')}</i>
+                % if event.get('location'):
+                    <small>(${event.get('location', '')})</small>
+                % endif
+            % endfor
+        </ul>
+    </div>
+    % endfor
+</div>
+
+<div class="line-block"><div class="line"/></div>
+<hr class="docutils">
+<div class="line-block"><div class="line"/></div>
+
+<div class="section" id="vergangene-events">
+    <h2>vergangene Events</h2>
+    <ul class="simple">
+        % for event in past_events:
+            <li><i>${event.get('date', '')}</i>:
+            % if event.get('url'):
+                <b><a href="${event['url']}">${event.get('summary', '')}</a></b>
+            % else:
+                <b>${event.get('summary', '')}</b>
+            % endif
+            <i>${event.get('description', '')}</i>
+        % endfor
+    </ul>
+</div>
