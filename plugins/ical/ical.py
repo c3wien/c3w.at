@@ -24,7 +24,7 @@ from nikola.utils import LocaleBorg
 
 from dateutil.rrule import rrulestr, rruleset
 from dateutil.relativedelta import relativedelta
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time, date
 from pytz import UTC
 
 class CalendarPlugin(ShortcodePlugin):
@@ -92,7 +92,10 @@ class CalendarPlugin(ShortcodePlugin):
 
     def _calculate_recurring(self, element, recurring_month):
         rules = rruleset()
-        dtstart = element.get('dtstart').dt.replace(tzinfo=UTC)
+        dtstart = element.get('dtstart').dt
+        if isinstance(dtstart, date):
+            dtstart = datetime.combine(dtstart, time())
+        dtstart = dtstart.replace(tzinfo=UTC)
         rrstr  = 'RRULE:%s' % element['RRULE'].to_ical().decode()
         rule = rrulestr(rrstr, dtstart=dtstart )
 
